@@ -1,7 +1,7 @@
 import React from "react";
-import ScreenMode from "./ScreenMode";
+import ScreenMode from "./ScreenMode/ScreenMode";
+import Title from "./Title/Title";
 import { StyledHeader } from "./style";
-import Title from "./Title";
 
 export default function Header() {
   return (

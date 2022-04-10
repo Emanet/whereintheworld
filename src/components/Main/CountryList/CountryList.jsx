@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState, useMemo } from "react";
+import { StyledCountryList } from "./style";
 import FetchAllCountry from "../../../api/services/Country";
 export default function ContryList() {
   const [country, setCountry] = useState([]);
@@ -14,16 +15,13 @@ export default function ContryList() {
   console.log(orderedCountries);
   return orderedCountries.map((item) => {
     return (
-      <div
-        style={{
-          width: "200px",
-          margin: "2em",
-          height: "300px",
-          boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-        }}
-      >
-        <img style={{ width: "100%" }} src={item.flags.png} alt="" />
-        <div>
+      <StyledCountryList>
+        <img
+          style={{ width: "100%", height: "139px" }}
+          src={item.flags.png}
+          alt=""
+        />
+        <div style={{ marginLeft: "10%" }}>
           <h3>{item.name.common}</h3>
           <div>
             <div>
@@ -37,7 +35,7 @@ export default function ContryList() {
             </div>
           </div>
         </div>
-      </div>
+      </StyledCountryList>
     );
   });
 }

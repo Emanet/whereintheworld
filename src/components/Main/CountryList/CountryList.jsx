@@ -16,7 +16,7 @@ export default function ContryList() {
   console.log(orderedCountries);
   return orderedCountries
     .filter((item) => {
-      return item.name.common.includes(filter);
+      return item.name.common.toLowerCase().includes(filter);
     })
     .map((item) => {
       return (

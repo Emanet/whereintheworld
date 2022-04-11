@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCountryList = styled.div`
+  background: #cdbe78;
   width: 200px;
   margin: 2em;
   height: 300px;

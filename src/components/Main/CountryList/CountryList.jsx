@@ -4,7 +4,8 @@ import { StyledCountryList } from "./style";
 import { useSelector } from "react-redux";
 import FetchAllCountry from "../../../api/services/Country";
 export default function ContryList() {
-  const filter = useSelector((state) => state.update.value);
+  const filterContinets = useSelector((state) => state.filter.value);
+  const searchCountry = useSelector((state) => state.update.value);
   const [country, setCountry] = useState([]);
   useEffect(() => {
     FetchAllCountry().then((data) => setCountry(data));
@@ -13,10 +14,16 @@ export default function ContryList() {
     () => country.sort((a, b) => a.name.common.localeCompare(b.name.common)),
     [country]
   );
-  console.log(orderedCountries);
   return orderedCountries
     .filter((item) => {
-      return item.name.common.toLowerCase().includes(filter);
+      if (filterContinets) {
+        console.log(filterContinets);
+        return item.continents.some((v) => v.includes(filterContinets));
+      } else {
+        return item.name.common
+          .toLowerCase()
+          .includes(searchCountry.toLowerCase());
+      }
     })
     .map((item) => {
       return (

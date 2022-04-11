@@ -1,14 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { filter } from "../../../features/filter/filterSlice";
 
 export default function Filter() {
+  const dispatch = useDispatch();
+  const handleClick = (event) => {
+    dispatch(filter(event.target.value));
+  };
   return (
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-        <a>Link 1</a>
-        <a>Link 2</a>
-        <a>Link 3</a>
-      </div>
+    <div style={{ position: "absolute", marginLeft: "50%" }}>
+      <button value="Africa" onClick={handleClick}>
+        Africa
+      </button>
+      <button value="America" onClick={handleClick}>
+        America
+      </button>
+      <button value="Europe" onClick={handleClick}>
+        Europe
+      </button>
     </div>
   );
 }

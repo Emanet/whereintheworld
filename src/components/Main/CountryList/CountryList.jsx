@@ -29,7 +29,11 @@ export default function ContryList() {
       return (
         <StyledCountryList>
           <img
-            style={{ width: "100%", height: "139px" }}
+            style={{
+              width: "100%",
+              height: "139px",
+              borderRadius: "20px 20px 0 0 ",
+            }}
             src={item.flags.png}
             alt=""
           />

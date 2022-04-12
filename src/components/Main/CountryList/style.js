@@ -10,4 +10,5 @@ export const StyledCountryList = styled.div`
   &:hover {
     transform: scale(1.2);
   }
+  border-radius: 20px;
 `;

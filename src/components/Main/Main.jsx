@@ -5,12 +5,16 @@ import SearchBar from "./SearchBar/SearchBar";
 
 export default function Main() {
   return (
-    <div
-      style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-    >
-      <SearchBar />
-      <Filter />
-      <ContryList />
+    <div>
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <SearchBar />
+        <Filter />
+      </div>
+      <div
+        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+      >
+        <ContryList />
+      </div>
     </div>
   );
 }

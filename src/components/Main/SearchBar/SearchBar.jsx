@@ -7,7 +7,7 @@ export default function SearchBar() {
     dispatch(update(event.target.value));
   };
   return (
-    <div style={{ position: "absolute" }}>
+    <div>
       <input
         onInput={handleInput}
         type="text"

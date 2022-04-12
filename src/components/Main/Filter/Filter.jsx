@@ -8,7 +8,7 @@ export default function Filter() {
     dispatch(filter(event.target.value));
   };
   return (
-    <div style={{ position: "absolute", marginLeft: "50%" }}>
+    <div>
       <button value="Africa" onClick={handleClick}>
         Africa
       </button>
